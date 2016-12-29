@@ -116,7 +116,7 @@ CREATE INDEX IX_Users_FirstName_LastName ON Users (FirstName, LastName)
 
 
 /*
-	Run the same query again, the cost has gone right down, but the bookmark lookup is expensive.  
+	Run the same query again, the cost has gone right down, but the bookmark lookup to find email address is expensive.  
 	As more rows are returned, the compatiative cost of the bookmark lookup goes up.
 */
 
@@ -143,4 +143,5 @@ WHERE FirstName = 'sysrscols'
 SELECT FirstName
 FROM Users 
 WHERE  LastName = 'sysfiles1'
+
 
