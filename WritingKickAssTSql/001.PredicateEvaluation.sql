@@ -46,7 +46,10 @@ WHERE l.LastLoginDate >= DateAdd(minute, -10, getDate())
 
 
 /*
-	Observe the difference in execution plan estimated costs.
+	Observe the difference in:
+	* Execution plan costs.
+	* Estimated vs actual rows in Option 1's Index Scan operator.
+	* Actual IO
 */
 
 
