@@ -3,7 +3,7 @@ IF object_Id('Users') IS NOT NULL
 
 IF object_Id('UserStatuses') IS NOT NULL
 	DROP TABLE UserStatuses
-
+	
 SET STATISTICS IO ON
 
 /* Create the table */
@@ -91,8 +91,6 @@ WHERE us.Name = 'Deleted'
 ORDER BY u.EmailAddress
 
 
-
-
 /*
 	Compare to this query.
 	Note the cost difference.
@@ -101,7 +99,7 @@ ORDER BY u.EmailAddress
 
 SELECT u.EmailAddress
 FROM Users u
-WHERE u.UserStatusId = 3
+WHERE u.UserStatusId = 3 /* This could be an enum/const in code. */
 ORDER BY u.EmailAddress
 
 
