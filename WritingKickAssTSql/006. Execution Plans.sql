@@ -103,3 +103,12 @@ WHERE u.UserStatusId = 3 /* This could be an enum/const in code. */
 ORDER BY u.EmailAddress
 
 
+
+
+
+IF object_Id('Users') IS NOT NULL
+	DROP TABLE Users
+
+IF object_Id('UserStatuses') IS NOT NULL
+	DROP TABLE UserStatuses
+	

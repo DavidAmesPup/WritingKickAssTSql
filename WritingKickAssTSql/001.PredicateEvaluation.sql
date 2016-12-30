@@ -49,8 +49,14 @@ WHERE l.LastLoginDate >= DateAdd(minute, -10, getDate())
 	Observe the difference in:
 	* Execution plan costs.
 	* Estimated vs actual rows in Option 1's Index Scan operator.
-	* Actual IO
+	* Actual IO for both executions.
 */
 
 
+
+
+/* Clean Up */
+
+IF object_Id('UserLoginLog') IS NOT NULL
+	DROP TABLE UserLoginLog
 

@@ -6,9 +6,11 @@ IF object_Id('Users') IS NOT NULL
 	DROP TABLE Users
 
 /* Create the table */
+
 CREATE TABLE Users  (Id int NOT NULL identity,
 				     FullName varchar(200), 						
 					 CONSTRAINT PK_Users PRIMARY KEY (id))
+
 
 CREATE INDEX IX_Users_FullName ON Users (FullName)
 
@@ -34,6 +36,7 @@ FROM	sys.objects o1
 SELECT * From Users  WHERE FullName LIKE 'sysxsrvs sysfoqueues%'
 
 /* Option 2, types are different */
+
 SELECT * From Users  WHERE FullName LIKE N'sysxsrvs sysfoqueues%'
 
 
@@ -43,3 +46,10 @@ SELECT * From Users  WHERE FullName LIKE N'sysxsrvs sysfoqueues%'
 	* Estimated vs actual rows in Option 1's Index Scan operator.
 	* Actual IO for both executions.
 */
+
+
+/* Clean Up */
+
+IF object_Id('Users') IS NOT NULL
+	DROP TABLE Users
+

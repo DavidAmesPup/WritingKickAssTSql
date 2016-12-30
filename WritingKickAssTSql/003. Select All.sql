@@ -55,3 +55,10 @@ SELECT EmailAddress, FirstName, MobilePhoneNumber
 FROM Users 
 WHERE EmailAddress LIKE 'sysfiles1_sysbrickfiles%'
 
+
+
+/* Clean Up */
+
+IF object_Id('Users') IS NOT NULL
+	DROP TABLE Users
+

@@ -236,3 +236,26 @@ CREATE INDEX IX_ApplicationSteps_IsActive_ApplicationID ON ApplicationSteps (IsA
 
 
 
+
+
+
+
+
+/* Clean Up */
+
+IF object_Id('ApplicationSteps') IS NOT NULL
+	DROP TABLE ApplicationSteps
+
+IF object_Id('Applications') IS NOT NULL
+	DROP TABLE Applications
+
+
+IF object_Id('Jobs') IS NOT NULL
+	DROP TABLE Jobs
+
+
+IF object_Id('Users') IS NOT NULL
+	DROP TABLE Users
+
+IF object_Id('UserStatuses') IS NOT NULL
+	DROP TABLE UserStatuses

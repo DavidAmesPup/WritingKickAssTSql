@@ -145,3 +145,9 @@ FROM Users
 WHERE  LastName = 'sysfiles1'
 
 
+
+
+/* Clean Up */
+IF object_Id('Users') IS NOT NULL
+	DROP TABLE Users
+
